@@ -9,10 +9,12 @@ from routes.chat import router as chat_router
 from routes.dashboard import router as dashboard_router
 
 app = FastAPI(title="Veridian IT Agent")
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:5173",
+        "https://internal-service-agent.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
