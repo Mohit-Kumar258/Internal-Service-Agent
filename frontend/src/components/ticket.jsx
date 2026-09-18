@@ -6,6 +6,8 @@ import {
   Search,
 } from "lucide-react";
 
+const API_BASE_URL = "https://veridian-it-backend-nine.vercel.app";
+
 function Tickets() {
   const [tickets, setTickets] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -18,7 +20,7 @@ function Tickets() {
 
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/tickets"
+        `${API_BASE_URL}/api/tickets`
       );
 
       setTickets(response.data.tickets || []);
@@ -307,7 +309,6 @@ function Tickets() {
                       <span className="text-xs text-slate-600">
                         No policy source
                       </span>
-
                     )}
 
 

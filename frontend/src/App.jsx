@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+const API_BASE_URL = "https://veridian-it-backend-nine.vercel.app";
+
 import AISupport from "./components/aisupport";
 import Sidebar from "./components/sidebar";
 import Tickets from "./components/ticket";
@@ -111,7 +113,7 @@ function Dashboard({ setActivePage }) {
       setLoading(true);
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/dashboard"
+        `${API_BASE_URL}/api/dashboard`
       );
 
       if (!response.ok) {

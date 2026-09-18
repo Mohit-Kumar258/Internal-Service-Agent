@@ -7,6 +7,8 @@ import {
   FileText,
 } from "lucide-react";
 
+const API_BASE_URL = "https://veridian-it-backend-nine.vercel.app";
+
 function KnowledgeBase() {
   const [policies, setPolicies] = useState([]);
   const [search, setSearch] = useState("");
@@ -19,7 +21,7 @@ function KnowledgeBase() {
 
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/knowledge"
+        `${API_BASE_URL}/api/knowledge`
       );
 
       setPolicies(response.data.policies || []);

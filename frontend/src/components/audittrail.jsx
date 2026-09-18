@@ -9,6 +9,8 @@ import {
   HelpCircle,
 } from "lucide-react";
 
+const API_BASE_URL = "https://veridian-it-backend-nine.vercel.app";
+
 function AuditTrail() {
   const [logs, setLogs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -21,7 +23,7 @@ function AuditTrail() {
 
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/audit"
+        `${API_BASE_URL}/api/audit`
       );
 
       setLogs(response.data.logs || []);

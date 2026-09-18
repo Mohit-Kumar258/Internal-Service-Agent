@@ -88,7 +88,7 @@ function AISupport() {
     try {
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/chat",
+        "https://veridian-it-backend-nine.vercel.app/api/chat",
         {
           message,
           employee_name: name,
